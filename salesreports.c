@@ -40,6 +40,22 @@ void monthlysales2(double sales[12]) {
     printf("Minimum sales: $%.2f (%s)\n", minSales, months[minIndex]);
     printf("Maximum sales: $%.2f (%s)\n", maxSales, months[maxIndex]);
     printf("Average sales: $%.2f\n", averageSales);
+    printf("\n");
+}
+void monthlysales3(double sales[12]) {
+    const char *months[] = {
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    };
+
+    printf("Six-Month Moving Average Report:\n");
+    for (int i = 0; i <= 6; i++) {
+        double sum = 0;
+        for (int j = 0; j < 6; j++) {
+            sum += sales[i + j];
+        }
+        printf("%-15s - %-15s $%-14.2f\n", months[i], months[i + 5], sum / 6.0);
+    }
 }
 int main() {
     double monthlySales[12] = {
@@ -47,4 +63,5 @@ int main() {
     };
     monthlysales1(monthlySales);
     monthlysales2(monthlySales);
+    monthlysales3(monthlySales);
 }
