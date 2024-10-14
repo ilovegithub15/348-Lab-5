@@ -87,9 +87,11 @@ void monthlysales4(double sales[12]) {
     }
 }
 int main() {
-    double monthlySales[12] = {
-        23458.01,40112.00,56011.85,37820.88,37904.67,60200.22,72400.31,56210.89,67230.84,68233.12,80950.34,95225.22
-    };
+    double monthlySales[12];
+    FILE *file = fopen("input.txt", "r");
+    for (int i = 0; i < 12; i++) {
+        fscanf(file, "%lf", &monthlySales[i]);
+    }
     monthlysales1(monthlySales);
     monthlysales2(monthlySales);
     monthlysales3(monthlySales);
