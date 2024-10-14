@@ -52,8 +52,18 @@ int main() {
     {5, 4, 3, 2, 1}
     };
     int result[SIZE][SIZE];
+    printf("Output:\n");
+    printf("Addition: \n");
     addMatrices(m1, m2, result);
     printMatrix(result);
+    printf("Multiplication: \n");
     multiplyMatrices(m1,m2,result);
+    printMatrix(result);
+    printf("Transpose: \n");
+    transposeMatrix(m1,result);
+    printf("Matrix 1:\n");
+    printMatrix(result);
+    transposeMatrix(m2,result);
+    printf("Matrix 2:\n");
     printMatrix(result);
 }
