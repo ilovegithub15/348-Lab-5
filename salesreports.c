@@ -1,4 +1,5 @@
 #include <stdio.h>
+//prints the first required output
 void monthlysales1(double sales[12]) {
     const char *months[] = {
         "January", "February", "March", "April", "May", "June",
@@ -11,6 +12,7 @@ void monthlysales1(double sales[12]) {
         printf("%-15s $%-14.2f\n", months[i], sales[i]);
     }
 }
+//prints the second required output
 void monthlysales2(double sales[12]) {
     double minSales = sales[0];
     double maxSales = sales[0];
@@ -43,6 +45,7 @@ void monthlysales2(double sales[12]) {
     printf("Average sales: $%.2f\n", averageSales);
     printf("\n");
 }
+//prints the third required output
 void monthlysales3(double sales[12]) {
     const char *months[] = {
         "January", "February", "March", "April", "May", "June",
@@ -59,6 +62,7 @@ void monthlysales3(double sales[12]) {
         printf("%-15s - %-15s $%-14.2f\n", months[i], months[i + 5], sum / 6.0);
     }
 }
+//prints the fourth required output
 void monthlysales4(double sales[12]) {
     const char *months[] = {
         "January", "February", "March", "April", "May", "June",
@@ -87,11 +91,13 @@ void monthlysales4(double sales[12]) {
     }
 }
 int main() {
+    //reads the input.txt file and adds each line to monthlySales
     double monthlySales[12];
     FILE *file = fopen("input.txt", "r");
     for (int i = 0; i < 12; i++) {
         fscanf(file, "%lf", &monthlySales[i]);
     }
+    //runs all 4 functions
     monthlysales1(monthlySales);
     monthlysales2(monthlySales);
     monthlysales3(monthlySales);
